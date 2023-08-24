@@ -21,3 +21,9 @@ RUN mkdir /YDLidar-SDK/build \
     && cmake .. \
     && make \
     && make install
+
+WORKDIR /ros2_ws/
+
+#RUN cd /ros2_ws/ \
+#    && . /opt/ros/humble/setup.sh \
+#    && colcon build
