@@ -4,7 +4,7 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # Copy udev rules
-cp ${SCRIPT_DIR}/udev/ydlidar.rules /etc/udev/rules.d/ydlidar.rules
+cp ${SCRIPT_DIR}/../udev/ydlidar.rules /etc/udev/rules.d/ydlidar.rules
 
 # Restart udev
 udevadm control --reload-rules
