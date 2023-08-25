@@ -1,7 +1,7 @@
 FROM ros:humble
 
 RUN apt update
-RUN apt install git net-tools -y
+RUN apt install git net-tools udev -y
 
 # Set work directory
 WORKDIR /ros2_ws/
