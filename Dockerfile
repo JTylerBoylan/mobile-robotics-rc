@@ -31,9 +31,6 @@ RUN cd /ros2_ws/ \
     && . /opt/ros/humble/setup.sh \
     && colcon build
 
-# Set up udev rules
-COPY ./udev/ydlidar.rules /etc/udev/rules.d/ydlidar.rules
-
 # Set up entrypoint script
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
