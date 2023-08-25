@@ -29,10 +29,10 @@ COPY ./ydlidar_ros2 /ros2_ws/src/ydlidar_ros2
 # Build ROS workspace
 RUN cd /ros2_ws/ \
     && . /opt/ros/humble/setup.sh \
-    && colcon build \
-    && . /ros2_ws/install/setup.sh
+    && colcon build
 
 # Set up udev rules
 COPY ./udev/ydlidar.rules /etc/udev/rules.d/ydlidar.rules
-RUN udevadm control --reload-rules \
+RUN service udev restart \
+    && udevadm control --reload-rules \
     && udevadm trigger
