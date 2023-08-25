@@ -33,6 +33,7 @@ RUN cd /ros2_ws/ \
 
 # Set up udev rules
 COPY ./udev/ydlidar.rules /etc/udev/rules.d/ydlidar.rules
-RUN service udev restart \
-    && udevadm control --reload-rules \
-    && udevadm trigger
+
+# Set up entrypoint script
+COPY ./entrypoint.sh /entrypoint.sh
+ENTRYPOINT [ "/entrypoint.sh" ]
